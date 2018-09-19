@@ -1,0 +1,807 @@
+{
+  "version": "1.7.4",
+  "globalBitSize": 1,
+  "clockSpeed": 1,
+  "circuits": [
+    {
+      "name": "RS Latch",
+      "components": [
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 11,
+          "y": 24,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "r",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.gates.NandGatePeer",
+          "x": 21,
+          "y": 11,
+          "properties": {
+            "Negate 1": "No",
+            "Label location": "NORTH",
+            "Negate 0": "No",
+            "Number of Inputs": "2",
+            "Label": "",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.gates.NandGatePeer",
+          "x": 21,
+          "y": 22,
+          "properties": {
+            "Negate 1": "No",
+            "Label location": "NORTH",
+            "Negate 0": "No",
+            "Number of Inputs": "2",
+            "Label": "",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 11,
+          "y": 11,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "s",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 46,
+          "y": 11,
+          "properties": {
+            "Label location": "EAST",
+            "Label": "out",
+            "Is input?": "No",
+            "Direction": "WEST",
+            "Bitsize": "1"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "x": 18,
+          "y": 20,
+          "length": 3,
+          "isHorizontal": false
+        },
+        {
+          "x": 25,
+          "y": 12,
+          "length": 1,
+          "isHorizontal": false
+        },
+        {
+          "x": 13,
+          "y": 25,
+          "length": 8,
+          "isHorizontal": true
+        },
+        {
+          "x": 13,
+          "y": 12,
+          "length": 8,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 20,
+          "length": 12,
+          "isHorizontal": true
+        },
+        {
+          "x": 25,
+          "y": 24,
+          "length": 2,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "length": 3,
+          "isHorizontal": false
+        },
+        {
+          "x": 30,
+          "y": 12,
+          "length": 16,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 23,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 27,
+          "y": 17,
+          "length": 7,
+          "isHorizontal": false
+        },
+        {
+          "x": 18,
+          "y": 17,
+          "length": 9,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 25,
+          "y": 12,
+          "length": 5,
+          "isHorizontal": true
+        },
+        {
+          "x": 30,
+          "y": 12,
+          "length": 8,
+          "isHorizontal": false
+        }
+      ]
+    },
+    {
+      "name": "Gated D Latch",
+      "components": [
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 13,
+          "y": 24,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "CLK",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.gates.NandGatePeer",
+          "x": 22,
+          "y": 22,
+          "properties": {
+            "Negate 1": "Yes",
+            "Label location": "NORTH",
+            "Negate 0": "No",
+            "Number of Inputs": "2",
+            "Label": "",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 37,
+          "y": 18,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "RS Latch",
+            "Subcircuit": "RS Latch"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 46,
+          "y": 18,
+          "properties": {
+            "Label location": "EAST",
+            "Label": "out",
+            "Is input?": "No",
+            "Direction": "WEST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 13,
+          "y": 13,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "data",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.gates.NandGatePeer",
+          "x": 22,
+          "y": 13,
+          "properties": {
+            "Negate 1": "No",
+            "Label location": "NORTH",
+            "Negate 0": "No",
+            "Number of Inputs": "2",
+            "Label": "",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "x": 27,
+          "y": 20,
+          "length": 10,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 23,
+          "length": 2,
+          "isHorizontal": true
+        },
+        {
+          "x": 40,
+          "y": 19,
+          "length": 6,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 16,
+          "length": 7,
+          "isHorizontal": false
+        },
+        {
+          "x": 15,
+          "y": 23,
+          "length": 5,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "length": 4,
+          "isHorizontal": true
+        },
+        {
+          "x": 26,
+          "y": 19,
+          "length": 11,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 14,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 23,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 18,
+          "y": 14,
+          "length": 11,
+          "isHorizontal": false
+        },
+        {
+          "x": 18,
+          "y": 25,
+          "length": 4,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 16,
+          "length": 2,
+          "isHorizontal": true
+        },
+        {
+          "x": 27,
+          "y": 20,
+          "length": 4,
+          "isHorizontal": false
+        },
+        {
+          "x": 26,
+          "y": 15,
+          "length": 4,
+          "isHorizontal": false
+        }
+      ]
+    },
+    {
+      "name": "D Flip-Flop",
+      "components": [
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 13,
+          "y": 24,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "CLK",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 21,
+          "y": 18,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "Gated D Latch"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 46,
+          "y": 18,
+          "properties": {
+            "Label location": "EAST",
+            "Label": "out",
+            "Is input?": "No",
+            "Direction": "WEST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 34,
+          "y": 18,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "Gated D Latch"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.gates.NotGatePeer",
+          "x": 18,
+          "y": 19,
+          "properties": {
+            "Label location": "NORTH",
+            "Negate 0": "No",
+            "Label": "",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 13,
+          "y": 13,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "data",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "x": 18,
+          "y": 23,
+          "length": 11,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 25,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 29,
+          "y": 20,
+          "length": 5,
+          "isHorizontal": true
+        },
+        {
+          "x": 24,
+          "y": 19,
+          "length": 10,
+          "isHorizontal": true
+        },
+        {
+          "x": 37,
+          "y": 19,
+          "length": 9,
+          "isHorizontal": true
+        },
+        {
+          "x": 21,
+          "y": 14,
+          "length": 5,
+          "isHorizontal": false
+        },
+        {
+          "x": 18,
+          "y": 20,
+          "length": 3,
+          "isHorizontal": false
+        },
+        {
+          "x": 18,
+          "y": 23,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 29,
+          "y": 20,
+          "length": 3,
+          "isHorizontal": false
+        },
+        {
+          "x": 15,
+          "y": 14,
+          "length": 6,
+          "isHorizontal": true
+        }
+      ]
+    },
+    {
+      "name": "Register",
+      "components": [
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 9,
+          "y": 8,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "dataIn",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "4"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 21,
+          "y": 10,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "D Flip-Flop"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 11,
+          "y": 20,
+          "properties": {
+            "Label location": "WEST",
+            "Label": "CLK",
+            "Is input?": "Yes",
+            "Direction": "EAST",
+            "Bitsize": "1"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.SplitterPeer",
+          "x": 56,
+          "y": 11,
+          "properties": {
+            "Label location": "NORTH",
+            "Bit 3": "3",
+            "Fanouts": "4",
+            "Input location": "Left/Top",
+            "Label": "",
+            "Bit 2": "2",
+            "Direction": "WEST",
+            "Bit 1": "1",
+            "Bitsize": "4",
+            "Bit 0": "0"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 21,
+          "y": 20,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "D Flip-Flop"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 21,
+          "y": 25,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "D Flip-Flop"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.SubcircuitPeer",
+          "x": 21,
+          "y": 15,
+          "properties": {
+            "Label location": "NORTH",
+            "Label": "",
+            "Subcircuit": "D Flip-Flop"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.PinPeer",
+          "x": 58,
+          "y": 10,
+          "properties": {
+            "Label location": "EAST",
+            "Label": "dataOut",
+            "Is input?": "No",
+            "Direction": "WEST",
+            "Bitsize": "4"
+          }
+        },
+        {
+          "name": "com.ra4king.circuitsim.gui.peers.wiring.SplitterPeer",
+          "x": 13,
+          "y": 9,
+          "properties": {
+            "Label location": "NORTH",
+            "Bit 3": "3",
+            "Fanouts": "4",
+            "Input location": "Left/Top",
+            "Label": "",
+            "Bit 2": "2",
+            "Direction": "EAST",
+            "Bit 1": "1",
+            "Bitsize": "4",
+            "Bit 0": "0"
+          }
+        }
+      ],
+      "wires": [
+        {
+          "x": 16,
+          "y": 19,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 16,
+          "y": 19,
+          "length": 5,
+          "isHorizontal": false
+        },
+        {
+          "x": 15,
+          "y": 26,
+          "length": 6,
+          "isHorizontal": true
+        },
+        {
+          "x": 24,
+          "y": 21,
+          "length": 29,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 12,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 53,
+          "y": 15,
+          "length": 6,
+          "isHorizontal": false
+        },
+        {
+          "x": 53,
+          "y": 15,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 46,
+          "y": 11,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 17,
+          "y": 13,
+          "length": 8,
+          "isHorizontal": false
+        },
+        {
+          "x": 52,
+          "y": 14,
+          "length": 4,
+          "isHorizontal": true
+        },
+        {
+          "x": 24,
+          "y": 11,
+          "length": 22,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 13,
+          "length": 2,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 16,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 16,
+          "y": 24,
+          "length": 4,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 12,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 46,
+          "y": 13,
+          "length": 10,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 27,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 13,
+          "y": 21,
+          "length": 8,
+          "isHorizontal": false
+        },
+        {
+          "x": 56,
+          "y": 16,
+          "length": 10,
+          "isHorizontal": false
+        },
+        {
+          "x": 13,
+          "y": 19,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 52,
+          "y": 14,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 15,
+          "y": 11,
+          "length": 6,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 12,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 27,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 13,
+          "y": 29,
+          "length": 7,
+          "isHorizontal": true
+        },
+        {
+          "x": 15,
+          "y": 14,
+          "length": 12,
+          "isHorizontal": false
+        },
+        {
+          "x": 17,
+          "y": 21,
+          "length": 4,
+          "isHorizontal": true
+        },
+        {
+          "x": 19,
+          "y": 19,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 24,
+          "y": 26,
+          "length": 32,
+          "isHorizontal": true
+        },
+        {
+          "x": 19,
+          "y": 14,
+          "length": 5,
+          "isHorizontal": false
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 18,
+          "y": 12,
+          "length": 4,
+          "isHorizontal": false
+        },
+        {
+          "x": 20,
+          "y": 22,
+          "length": 2,
+          "isHorizontal": false
+        },
+        {
+          "x": 20,
+          "y": 22,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 19,
+          "y": 14,
+          "length": 1,
+          "isHorizontal": true
+        },
+        {
+          "x": 13,
+          "y": 19,
+          "length": 3,
+          "isHorizontal": true
+        },
+        {
+          "x": 24,
+          "y": 16,
+          "length": 28,
+          "isHorizontal": true
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "length": 2,
+          "isHorizontal": false
+        }
+      ]
+    }
+  ]
+}
