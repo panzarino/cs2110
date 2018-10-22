@@ -22,8 +22,8 @@ fi
 echo Found Docker Installation. Checking for existing containers.
 
 existingContainers=$(docker ps -a | grep $imageName | awk '{print $1}')
-
-if [ $existingContainers ]; then
+echo $existingContainers
+if [[ -n $existingContainers ]]; then
 	echo Found CS 2110 containers. Stopping and removing them.
 	docker stop $existingContainers >/dev/null
 	docker rm $existingContainers >/dev/null
@@ -47,20 +47,25 @@ fi
 
 echo Starting up new CS 2110 Docker Container:
 
-docker run -d -p 6901:6901 -p 5901:5901 -v "$(pwd)":/cs2110/host/ dbecker1/cs2110docker 
+if [ "$1" == "-it" ]; then
+	docker run --rm -p 6901:6901 -p 5901:5901 -v "$(pwd)":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it  --entrypoint /bin/bash dbecker1/cs2110docker
+else 
+	docker run -d -p 6901:6901 -p 5901:5901 -v "$(pwd)":/cs2110/host/ --cap-add=SYS_PTRACE --security-opt seccomp=unconfined dbecker1/cs2110docker 
 
-successfulRun=$?
+	successfulRun=$?
 
-ipAddress="$(docker-machine ip default 2>/dev/null)"
+	ipAddress="$(docker-machine ip default 2>/dev/null)"
 
-foundIp=$?;
+	foundIp=$?;
 
-if [ $foundIp != 0 ]; then
-	ipAddress="localhost";
+	if [ $foundIp != 0 ]; then
+		ipAddress="localhost";
+	fi
+
+	if [ $successfulRun == 0 ]; then
+		echo Successfully launched CS 2110 Docker container. Please go to http://$ipAddress:6901/vnc.html to access it.
+	else 
+		echo ERROR: Unable to launch CS 2110 Docker container.
+	fi 
 fi
 
-if [ $successfulRun == 0 ]; then
-	echo Successfully launched CS 2110 Docker container. Please go to http://$ipAddress:6901/vnc.html to access it.
-else 
-	echo ERROR: Unable to launch CS 2110 Docker container.
-fi 
